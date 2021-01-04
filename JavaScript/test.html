@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Test</title>
+</head>
+<body>
+<h2>Assigning JavaScript Values</h2>
+<p>In JavaScript the = operator is used to assign values to variables.</p>
+<p id="demo"></p>
+
+<script>
+var x, y;
+x = 5;
+y = 6;
+document.getElementById("demo").innerHTML = x + y;
+</script>
+TEST JS
+<form>
+  <input type="button" name="button" value="click me" onclick="alert('You clicked me!');"/>
+</form>
+
+<script type="text/javascript">
+  var frukt="apelsin";
+
+  switch(frukt){
+    case "banan":
+      document.write("god och mättande!");
+      break
+    case "äpple":
+      document.write("krispigt och sött");
+      break
+    case "apelsin":
+      document.write("syrligt och saftigt");
+      break
+    default:
+      document.write("Jag känner inte till den frukten");
+  }
+</script>
+
+</body>
+</html>

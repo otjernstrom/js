@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cookies</title>
+  <script language="JavaScript">
+    //reset dokumentets cookie om det är fel person
+    function felPerson() {
+      document.cookie = "name = null;" + " expires=Thu, 01-Jan-95 00:00:01 GMT";
+      // när cookien är borttagen körs sidan om
+      // och frågar efter ett nytt namn
+      location.reload();
+    }
+    var nu = new Date(); //nuvarande datum och tid
+    var tid = nu.getHours(); // timme just nu
+    var namn;
+    if (tid < 12) // bestäm om det är morgon
+      document.write("<h1>God morgon, ");
+    else {
+      tid = tid - 12; // konvertera 24 tim till fm eller em
+      // bestäm om det är em eller kväll
+      if (tid < 6)
+        document.write("<h1>God eftermiddag, ");
+      else
+        document.write("<h1>God kväll, ");
+    }
+    // om det redan finns en cookie
+    if (document.cookie) {
+      //konverterar den cookie som finns så den går att läsa
+      var myCookie = unescape(document.cookie);
+      //delar upp cookien i token med hjälp av "="
+      var cookieTokens = myCookie.split("=");
+      //sätter namnet till tecknet efter "="tecknet
+      namn = cookieTokens[1];
+    } else {
+      // om det inte fanns nån cookie så ber vi om ett namn
+      namn = window.prompt("Skriv in ditt namn", "Namn");
+      // escape lägger in namnet i namnsträngen och
+      // lägger in det i cookien
+      document.cookie = "name=" + escape(namn);
+    }
+    document.writeln(namn + ", välkommen till JavaScript programmering! </h1>");
+    document.writeln("<a href= 'JavaScript:felPerson()'> " + "Klicka här om du inte är " + namn + "</a>");
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
