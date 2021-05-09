@@ -59,7 +59,7 @@ img:hover{
   transition: transform .5s;
 }
 .left{
-  background-color: yellow;
+  background-color: green;
   color: black;
 }
 .topnav ul{
